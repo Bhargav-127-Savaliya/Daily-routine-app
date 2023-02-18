@@ -16,6 +16,7 @@ class _loginwithState extends State<loginwith> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+
       child: Material(
         color: Color.fromARGB(255, 255, 237, 211),
         child: Column(
@@ -105,7 +106,7 @@ class _loginwithState extends State<loginwith> {
                 },
                 child: Container(
                   height: 50,
-                  width: 300,
+                  width: 310,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
                     color: Colors.black,
