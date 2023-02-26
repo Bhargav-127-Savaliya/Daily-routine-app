@@ -19,14 +19,39 @@ class _loginState extends State<login> {
       child: Container(
         padding: EdgeInsets.only(
           left: 0,
-          top: 60,
+          top: 0,
         ),
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.only(left: 0, top: 0, right: 350),
-              child: Icon(
-                CupertinoIcons.back,
+            // Container(
+            //   padding: EdgeInsets.only(left: 0, top: 0, right: 350),
+            //   child: Icon(
+            //     CupertinoIcons.back,
+            //   ),
+            // ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => loginwith()),
+                );
+              },
+              child: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                leading: Transform.translate(
+                  offset: Offset(-12, 0),
+                  child: Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: Colors.black,
+                    size: 18,
+                  ),
+                ),
+                titleSpacing: -30,
+                title: Text(
+                  "Back",
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                ),
               ),
             ),
             Image.asset(

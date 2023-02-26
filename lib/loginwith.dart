@@ -16,22 +16,46 @@ class _loginwithState extends State<loginwith> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-
       child: Material(
         color: Color.fromARGB(255, 255, 237, 211),
         child: Column(
           children: [
-            Container(
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.arrow_back_ios_sharp,
-                    size: 15,
+            InkWell(
+              // onTap: () {
+              //   Navigator.push(
+              //     context,
+              //     MaterialPageRoute(builder: (context) => loginwith()),
+              //   );
+              // },
+              child: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                leading: Transform.translate(
+                  offset: Offset(-12, 0),
+                  child: Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: Colors.black,
+                    size: 18,
                   ),
-                  Text("Back")
-                ],
-              ).py12(),
+                ),
+                titleSpacing: -30,
+                title: Text(
+                  "Back",
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                ),
+              ),
             ),
+            // Container(
+            //   child: Row(
+            //     children: [
+            //       Icon(
+            //         Icons.arrow_back_ios_sharp,
+            //         size: 15,
+            //       ),
+            //       Text("Back")
+            //     ],
+            //   ).py12(),
+            // ),
             Container(
               child: Padding(
                 padding: const EdgeInsets.only(left: 20),
