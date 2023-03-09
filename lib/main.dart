@@ -1,6 +1,8 @@
 import 'package:demo/age.dart';
+import 'package:demo/booksinweek.dart';
 import 'package:demo/gender.dart';
 import 'package:demo/loginwith.dart';
+import 'package:demo/time.dart';
 import 'package:flutter/material.dart';
 import 'goals.dart';
 import 'login_page.dart';
@@ -17,13 +19,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "loginwith",
+      initialRoute: "booksinweek",
       routes: {
         "loginwith": (context) => loginwith(),
         "login": (context) => login(),
         "gender": (context) => gender(),
         "age": (context) => age(),
         "goals": (context) => goals(),
+        "time": (context) => time(),
+        "booksinweek": (context) => booksinweek(),
       },
     );
   }

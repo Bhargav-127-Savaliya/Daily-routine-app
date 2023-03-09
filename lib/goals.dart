@@ -1,4 +1,6 @@
 import 'package:demo/gender.dart';
+import 'package:demo/loginwith.dart';
+import 'package:demo/time.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -11,6 +13,9 @@ class goals extends StatefulWidget {
 
 class _goalsState extends State<goals> {
   var _goal = "";
+  var _goal1 = "";
+  var _goal2 = "";
+  var _goal3 = "";
 
   @override
   Widget build(BuildContext context) {
@@ -139,13 +144,13 @@ class _goalsState extends State<goals> {
                     InkWell(
                       onTap: () {
                         // tell widget to load again
-                        if (_goal == "") {
+                        if (_goal1 == "") {
                           setState(() {
-                            _goal = "Focus";
+                            _goal1 = "Focus";
                           });
                         } else {
                           setState(() {
-                            _goal = "";
+                            _goal1 = "";
                           });
                         }
                       },
@@ -153,12 +158,12 @@ class _goalsState extends State<goals> {
                         width: 350,
                         height: 80,
                         decoration: BoxDecoration(
-                          color: _goal == "Focus"
+                          color: _goal1 == "Focus"
                               ? Color.fromARGB(255, 208, 234, 255)
                               : Colors.white,
                           border: Border.all(
                             color:
-                                _goal == "Focus" ? Colors.blue : Colors.white,
+                                _goal1 == "Focus" ? Colors.blue : Colors.white,
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -189,7 +194,136 @@ class _goalsState extends State<goals> {
                               width: 200,
                             ),
                             Container(
-                              child: _goal == "Focus"
+                              child: _goal1 == "Focus"
+                                  ? Icon(Icons.check_circle,
+                                      color: Color.fromARGB(255, 33, 72, 243))
+                                  : Icon(Icons.radio_button_off_rounded),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        // tell widget to load again
+                        if (_goal2 == "") {
+                          setState(() {
+                            _goal2 = "Eat";
+                          });
+                        } else {
+                          setState(() {
+                            _goal2 = "";
+                          });
+                        }
+                      },
+                      child: Container(
+                        width: 350,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: _goal2 == "Eat"
+                              ? Color.fromARGB(255, 208, 234, 255)
+                              : Colors.white,
+                          border: Border.all(
+                            color: _goal2 == "Eat" ? Colors.blue : Colors.white,
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 10,
+                            ),
+                            // Icon(Icons.home, color: Colors.black),
+                            Text(
+                              "🥗",
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "Eat Healthy",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 165,
+                            ),
+                            Container(
+                              child: _goal2 == "Eat"
+                                  ? Icon(Icons.check_circle,
+                                      color: Color.fromARGB(255, 33, 72, 243))
+                                  : Icon(Icons.radio_button_off_rounded),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        // tell widget to load again
+                        if (_goal3 == "") {
+                          setState(() {
+                            _goal3 = "Sleep";
+                          });
+                        } else {
+                          setState(() {
+                            _goal3 = "";
+                          });
+                        }
+                      },
+                      child: Container(
+                        width: 350,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: _goal3 == "Sleep"
+                              ? Color.fromARGB(255, 208, 234, 255)
+                              : Colors.white,
+                          border: Border.all(
+                            color:
+                                _goal3 == "Sleep" ? Colors.blue : Colors.white,
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 10,
+                            ),
+                            // Icon(Icons.home, color: Colors.black),
+                            Text(
+                              "😪",
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "Sleep",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 200,
+                            ),
+                            Container(
+                              child: _goal3 == "Sleep"
                                   ? Icon(Icons.check_circle,
                                       color: Color.fromARGB(255, 33, 72, 243))
                                   : Icon(Icons.radio_button_off_rounded),
@@ -200,11 +334,14 @@ class _goalsState extends State<goals> {
                     ),
                     // ElevatedButton(onPressed: () {}, child: Text("Cont")),
                     SizedBox(
-                      height: 300,
+                      height: 100,
                     ),
                     InkWell(
                       onTap: () {
-                        if (_goal.isEmpty) {
+                        if (_goal.isEmpty &&
+                            _goal1.isEmpty &&
+                            _goal2.isEmpty &&
+                            _goal3.isEmpty) {
                           // Show msg to select gender
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
@@ -216,7 +353,7 @@ class _goalsState extends State<goals> {
                         } else {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => goals()),
+                            MaterialPageRoute(builder: (context) => time()),
                           );
                         }
                       },
